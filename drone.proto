@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+message Request{
+    string data =1;
+
+}
+
+message Response{
+    string data=1;
+}
+
+service PingPong{
+    rpc retrievePosition(Request) returns (Response){}
+    rpc retrieveID(Request) returns (Response){}
+}
+
+// to install  drone proto
+// python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. drone.proto 
+
+
+
+
+
